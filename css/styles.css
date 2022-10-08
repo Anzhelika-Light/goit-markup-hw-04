@@ -137,9 +137,11 @@ body {
 }
 
 .nav-contact {
+    display: flex;
     color: var(--text-color);
     text-decoration: none;
     text-align: center;
+    align-items: center;
 }
 
 .nav-link:hover,
@@ -153,14 +155,25 @@ body {
 
 .link-icon {
     fill: currentColor;
-    vertical-align: middle;
-}
-
-.header-contact {
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* index.html - section 1 */
+
+.overlay {
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(
+        to right, 
+        rgba(47, 48, 58, 0.4), 
+        rgba(47, 48, 58, 0.4)
+     ), url(../images/hero-img-optimized.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 .hero {
     background-color: var(--banner-background-color);
@@ -337,7 +350,9 @@ img {
 
 .teammate-content {
     padding-top: 30px;
-    padding-bottom: 16px;
+    padding-bottom: 30px;
+    padding-right: 32px;
+    padding-left: 32px;
 }
 
 .teammate-name {
@@ -353,7 +368,7 @@ img {
 
 .teammate-position {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
@@ -361,30 +376,31 @@ img {
     color: var(--text-color);
 }
 
-.networks-container {
-    padding: 0 32px 30px 32px;;
-}
-
-.social-networks {
+.networks-list {
     display: flex;  
 }
 
 .network {
+    width: 44px;
+    height: 44px;
+}
+
+.network-link {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc((100% - 30px) / 4);
-    height: 44px;
     border-radius: 50%;
     color: var(--team-network-icon-color);
 }
-
+    
 .network:not(:last-child) {
     margin-right: 10px;
 }
 
-.network:hover,
-.network:focus {
+.network-link:hover,
+.network-link:focus {
     background-color: var(--team-network-icon-background-color);
     color: var(--team-network-icon-color-hover);
 }
@@ -411,22 +427,27 @@ img {
 }
 
 .client-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     width: calc((100% - 150px) / 6);
-    padding: 16px 32px;
-    border: 1px solid var(--client-item-border-and-icon);
-    border-radius: 4px;
-    color: var(--client-item-border-and-icon);
+    height: 92px;
 }
 
 .client-item:not(:last-child) {
     margin-right: 30px;
 }
 
-.client-item:hover {
+.client-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--client-item-border-and-icon);
+    border-radius: 4px;
+    color: var(--client-item-border-and-icon);
+    /* height: 92px; */
+}
+
+.client-link:hover {
     color: var(--client-item-border-and-icon-hover);
     border: 1px solid var(--client-item-border-and-icon-hover);
 }
@@ -492,9 +513,11 @@ img {
 
 .project-link {
     text-decoration: none;
+    display: block;
 }
 
-.project:hover {
+.project-link:hover,
+.project-link.focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -533,7 +556,7 @@ img {
 
 .footer-content {
     display: flex;
-
+    align-items: baseline;
 }
 
 .logo-footer {
@@ -565,11 +588,7 @@ address {
     color: var(--footer-text-color);
 }
 
-.footer-networks {
-    width: 206px;
-    height: 80px;
-    padding-top: 12px;
-    padding-bottom: 40px;
+.footer-social {
     margin-left: 70px;
 }
 
@@ -585,17 +604,32 @@ address {
     margin-bottom: 20px;
 }
 
+.footer-networks {
+    display: flex;
+}
+
 .footer-network {
-    background-color: var(--footer-network-icon-background-color);
-    color: var(--footer-network-icon-color);
+    width: 44px;
+    height: 44px;
 }
 
 .network:not(:last-child) {
     margin-right: 10px;
 }
 
-.network:hover,
-.network:focus {
+.footer-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--footer-network-icon-background-color);
+    color: var(--footer-network-icon-color);
+}
+
+.footer-link:hover,
+.footer-link:focus {
     background-color: var(--footer-network-icon-background-color-hover);
 }
 
